@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * BizHub Design System Tokens
+ * Spacing scale: 4 / 8 / 12 / 16 / 24 / 32 px
+ * Radii: cards 20px, buttons 999px
+ * Fonts: Inter (EN), Cairo (AR)
+ */
+:root {
+  --bh-bg: #F4F6FA;
+  --bh-surface: #FFFFFF;
+  --bh-surface-elevated: #EAEFF7;
+  --bh-border: #D5DFEC;
+  --bh-text: #0B1120;
+  --bh-text-muted: #475569;
+  --bh-coral: #D64234;
+  --bh-coral-hover: #BF372A;
+  --bh-coral-ink: #FFFFFF;
+  --bh-coral-text: #C53628;
+  --bh-coral-soft: rgba(214, 66, 52, 0.10);
+  --bh-amber: #F59E0B;
+  --bh-amber-text: #9A4A04;
+  --bh-amber-soft: rgba(245, 158, 11, 0.14);
+  --bh-success: #047857;
+  --bh-success-soft: rgba(4, 120, 87, 0.10);
+  --bh-error: #BE123C;
+  --bh-error-soft: rgba(190, 18, 60, 0.10);
+
+  --bh-space-1: 4px;
+  --bh-space-2: 8px;
+  --bh-space-3: 12px;
+  --bh-space-4: 16px;
+  --bh-space-6: 24px;
+  --bh-space-8: 32px;
+
+  --bh-radius-card: 20px;
+  --bh-radius-button: 999px;
+
+  --bh-font-en: 'Inter', 'Cairo', system-ui, -apple-system, sans-serif;
+  --bh-font-ar: 'Cairo', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.dark {
+  --bh-bg: #0B1120;
+  --bh-surface: #131C31;
+  --bh-surface-elevated: #1A2642;
+  --bh-border: #24324F;
+  --bh-text: #F8FAFC;
+  --bh-text-muted: #94A3B8;
+  --bh-coral: #FF6B5B;
+  --bh-coral-hover: #FF8173;
+  --bh-coral-ink: #0B1120;
+  --bh-coral-text: #FF8A7D;
+  --bh-coral-soft: rgba(255, 107, 91, 0.14);
+  --bh-amber: #F59E0B;
+  --bh-amber-text: #FBBF24;
+  --bh-amber-soft: rgba(245, 158, 11, 0.16);
+  --bh-success: #34D399;
+  --bh-success-soft: rgba(52, 211, 153, 0.14);
+  --bh-error: #FB7185;
+  --bh-error-soft: rgba(251, 113, 133, 0.14);
+}
+
+html {
+  background-color: var(--bh-bg);
+  color: var(--bh-text);
+  font-family: var(--bh-font-en);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html[lang="ar"] {
+  font-family: var(--bh-font-ar);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--bh-bg);
+  color: var(--bh-text);
+  overflow-x: hidden;
+  transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Visible keyboard focus ring meeting accessibility requirements */
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--bh-coral);
+  outline-offset: 2px;
+}
+
+/* Respect user reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}

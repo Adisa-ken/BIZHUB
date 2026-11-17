@@ -1,0 +1,6 @@
+{
+  "name": "BizHub",
+  "description": "Mobile-first local business discovery, booking, and owner management platform prototype.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
